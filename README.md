@@ -21,25 +21,13 @@ chess_engine/
 ```
 
 ## Roadmap
-- 1. Setup & Environment
-Install Poetry and Docker.
-Set up pyproject.toml with dependencies.
-Initialize Git repository.
-- 2. Board Representation
-Choose 0x88 or Bitboard representation.
-Implement move generation and validation.
-- 3. Move Generation & Rules
-Implement all piece moves (pawns, knights, etc.).
-Add castling, en passant, and promotion.
-- 4. Search Algorithm
-Implement Minimax.
-Optimize with Alpha-Beta Pruning.
-- 5. Position Evaluation
-Design a scoring system for piece values, mobility, etc.
-- 6. Playable Interface
-Add UCI (Universal Chess Interface) for external GUIs.
-Create a simple CLI.
-- 7. Optimization & Deployment
-Profile performance.
-Optimize data structures.
-Dockerize the project.
+
+- Setup & Environment
+- Initialize Git repository.
+- Board Representation
+- Move Generation & Rules
+- Search Algorithm
+- Position Evaluation
+- Playable Interface
+- Optimization & Deployment
+
