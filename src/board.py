@@ -5,7 +5,6 @@ class board:
     board : list[int] = field(default_factory = list)
 
     @staticmethod
-
     def convert_notation_to_position(str):
         if str[0] not in "abcdefgh":
             return "wrong notation"
@@ -26,3 +25,6 @@ class board:
                 return (7,int(str[1]))
             elif str[0] == 'h':
                 return (8,int(str[1]))
+            
+    def display_function():
+        print("chess Board is")
