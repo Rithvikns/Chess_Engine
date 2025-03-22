@@ -1,64 +1,30 @@
 
 # Chessboard Representation using Bitboards
 
-This module implements the chessboard using bitboards.
-Each piece type and color has its own 64-bit integer, where each bit represents a square on the board.
+T# Bitboard Representation of a Chess Board
 
-Bitboard Index Mapping:
-0  -> white_pawns
-1  -> white_knights
-2  -> white_bishops
-3  -> white_rooks
-4  -> white_queens
-5  -> white_kings
-6  -> black_pawns
-7  -> black_knights
-8  -> black_bishops
-9  -> black_rooks
-10 -> black_queens
-11 -> black_kings
-```console
-Bitwise Operations Used:
-- Setting a bit:    bitboard |= (1 << square)
-- Clearing a bit:   bitboard &= ~(1 << square)
-- Checking a bit:   bitboard & (1 << square)
-- Flipping a bit:   bitboard ^= (1 << square)
-"""
+## How to Store the Board in Bitboard Format?
 
-class Board:
-    def __init__(self):
-        """Initializes the board with bitboards for each piece type."""
-        pass
-    
-    def display(self):
-        """Converts bitboards into a readable board format and prints it."""
-        pass
-    
-    def set_piece(self, square: int, piece: str):
-        """Updates the bitboard to add/remove a piece at a given square."""
-        pass
-    
-    def move_piece(self, start: int, end: int):
-        """Moves a piece from one square to another using bit manipulation."""
-        pass
-    
-    def is_square_occupied(self, square: int) -> bool:
-        """Checks if a square has any piece."""
-        pass
-    
-    def get_occupancy(self, color: str):
-        """Returns a combined bitboard of all pieces for a given color."""
-        pass
-    
-    def to_fen(self) -> str:
-        """Converts the bitboard position into FEN notation."""
-        pass
-    
-    @classmethod
-    def from_fen(cls, fen: str):
-        """Loads a position from a FEN string into bitboards."""
-        pass
-    
-    def position_hash(self) -> int:
-        """Generates a unique hash for the current board state."""
-        pass
+Instead of using a single 8x8 array, we represent the chessboard using 12 separate bitboards, one for each piece type and color.
+
+### Bitboard Indexing
+
+| Index | Bitboard Name    | Description             |
+|--------|----------------|-------------------------|
+| 0      | white_pawns    | White pawns (P)        |
+| 1      | white_knights  | White knights (N)      |
+| 2      | white_bishops  | White bishops (B)      |
+| 3      | white_rooks    | White rooks (R)        |
+| 4      | white_queens   | White queens (Q)       |
+| 5      | white_kings    | White kings (K)        |
+| 6      | black_pawns    | Black pawns (p)        |
+| 7      | black_knights  | Black knights (n)      |
+| 8      | black_bishops  | Black bishops (b)      |
+| 9      | black_rooks    | Black rooks (r)        |
+| 10     | black_queens   | Black queens (q)       |
+| 11     | black_kings    | Black kings (k)        |
+
+### Explanation
+Each bitboard is a 64-bit integer, where each bit corresponds to a square on the chessboard. If a bit is set to `1`, it means a piece of that type is present on that square; otherwise, it's `0`.
+
+This representation allows for efficient bitwise operations, making move generation and position evaluation much faster than traditional array-based methods.
