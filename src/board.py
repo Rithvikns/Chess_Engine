@@ -52,7 +52,11 @@ class board:
     
     def get_occupancy(self, color: str):
         """Returns a combined bitboard of all pieces for a given color."""
-        pass
+        if  color ==  "White":
+            return(self.bitboards['P'] | self.bitboards['N'] | self.bitboards['R'] | self.bitboards['B'] | self.bitboards['Q'] | self.bitboards['K']) 
+        else:
+            return(self.bitboards['p'] | self.bitboards['n'] | self.bitboards['r'] | self.bitboards['b'] | self.bitboards['q'] | self.bitboards['k']) 
+            pass
     
     def to_fen(self) -> str:
         """Converts the bitboard position into FEN notation."""
