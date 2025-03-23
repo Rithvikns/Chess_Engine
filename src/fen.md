@@ -2,20 +2,21 @@
 
 FEN is a standard notation for representing a chess position as a single line of text. It is widely used in chess engines to store and share board states.
 
-FEN Format
+## FEN Format
+
 A FEN string consists of six fields, separated by spaces:
 
-Piece Placement – The board position from rank 8 to rank 1, using piece symbols (KQRBNP for white, kqrbnp for black) and numbers to indicate empty squares.
+- Piece Placement – The board position from rank 8 to rank 1, using piece symbols (KQRBNP for white, kqrbnp for black) and numbers to indicate empty squares.
 
-Active Color – Whose turn it is (w for White, b for Black).
+- Active Color – Whose turn it is (w for White, b for Black).
 
-Castling Rights – Available castling moves (KQkq for White/Black kingside/queenside castling, or - if none).
+- Castling Rights – Available castling moves (KQkq for White/Black kingside/queenside castling, or - if none).
 
-En Passant Target Square – If a pawn moves two squares forward, this shows the en passant target (e.g., e3), otherwise -.
+- En Passant Target Square – If a pawn moves two squares forward, this shows the en passant target (e.g., e3), otherwise -.
 
-Halfmove Clock – Counts moves since the last pawn move or capture (for the 50-move rule).
+- Halfmove Clock – Counts moves since the last pawn move or capture (for the 50-move rule).
 
-Fullmove Number – Starts at 1 and increments after Black’s move.
+- Fullmove Number – Starts at 1 and increments after Black’s move.
 
 Example FEN String
 The standard starting position in chess:
