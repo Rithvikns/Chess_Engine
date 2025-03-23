@@ -18,26 +18,27 @@ A FEN string consists of six fields, separated by spaces:
 
 - Fullmove Number – Starts at 1 and increments after Black’s move.
 
-Example FEN String
+## Example FEN String
+
 The standard starting position in chess:
+```console
 
-swift
-Copy
-Edit
 rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
-🔹 Breakdown:
+```
 
-rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR → The board setup.
+### Breakdown:
 
-w → White to move.
+- rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR → The board setup.
 
-KQkq → Both sides can castle kingside (Kk) and queenside (Qq).
+- w → White to move.
 
-- → No en passant target square.
+- KQkq → Both sides can castle kingside (Kk) and queenside (Qq).
 
-0 → No halfmoves made yet.
+- '-' → No en passant target square.
 
-1 → First full move.
+- 0 → No halfmoves made yet.
+
+- 1 → First full move.
 
 How This Is Used in a Chess Engine
 The engine generates a FEN string to store the board state.
