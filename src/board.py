@@ -36,8 +36,10 @@ class board:
         self.bitboards[piece] = self.bitboards[piece] | (1 << square)
         pass
     
-    def move_piece(self, start: int, end: int):
+    def move_piece(self,piece, start: int, end: int):
         """Moves a piece from one square to another using bit manipulation."""
+        self.bitboards[piece] = self.bitboards[piece] & (0 << start)
+        self.bitboards[piece] = self.bitboards[piece] | (1 << end)
         pass
     
     def is_square_occupied(self, square: int) -> bool:
