@@ -40,12 +40,13 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 
 - 1 → First full move.
 
-How This Is Used in a Chess Engine
-The engine generates a FEN string to store the board state.
+## How This Is Used in a Chess Engine
 
-It can load a position from a FEN string for analysis.
+- The engine generates a FEN string to store the board state.
 
-It helps in game state tracking and debugging.
+- It can load a position from a FEN string for analysis.
+
+- It helps in game state tracking and debugging.
 
 FEN in Action
 You can test FEN strings using online tools like Lichess FEN Editor.
