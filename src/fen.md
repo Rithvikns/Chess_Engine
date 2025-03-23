@@ -48,8 +48,8 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 
 - It helps in game state tracking and debugging.
 
-FEN in Action
+# FEN in Action
 You can test FEN strings using online tools like Lichess FEN Editor.
 
-📌 Implementing FEN parsing and generation is crucial for a chess engine. This ensures proper board representation and game state handling!
+- 📌 Implementing FEN parsing and generation is crucial for a chess engine. This ensures proper board representation and game state handling!
 
