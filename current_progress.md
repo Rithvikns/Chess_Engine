@@ -1,10 +1,6 @@
 
 # Method Formatting
 
-- The method to_fens is missing self as the first parameter.
-
-- Change to_fens(bitboards, ...) to to_fens(self, ...).
-
 - Incorrect Bitboard Clearing in move_piece
 
 - The line self.bitboards[piece] = self.bitboards[piece] & (0 << start) is incorrect.
