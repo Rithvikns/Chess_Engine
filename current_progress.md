@@ -1,12 +1,3 @@
-
-# Method Formatting
-
-- Incorrect Logic in is_square_occupied
-
-- The method currently returns False when a piece is present, which is the opposite of what it should do.
-
-- Instead of return False, it should return True when a piece is found.
-
 ## Extra pass Statements
 
 - pass is unnecessary in methods that already contain executable code.
