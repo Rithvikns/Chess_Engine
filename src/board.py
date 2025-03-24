@@ -17,7 +17,13 @@ class Board:
     'k' : 0b00001000_00000000_00000000_00000000_00000000_00000000_00000000_00000000
   
     })
+    side_to_move = 'w'
+    castling_rights = "KQkq"
+    enpassent = '-'
+    half_move = 0
+    full_move = 1
 
+    
     def display(self):
         """Converts bitboards into a readable board format and prints it."""
         chess_board = [[0]*8 for _ in range(8)]
