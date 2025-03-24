@@ -23,7 +23,7 @@ class Board:
     half_move = 0
     full_move = 1
 
-    
+
     def display(self):
         """Converts bitboards into a readable board format and prints it."""
         chess_board = [[0]*8 for _ in range(8)]
@@ -102,7 +102,21 @@ class Board:
     @classmethod
     def from_fen(cls, fen: str):
         """Loads a position from a FEN string into bitboards."""
-        pass
+        cls.bitboards = dict.fromkeys(cls.bitboards.keys(),0)
+        fen_list = fen.split(" ")
+        pos_list = fen_list[0].split("/")
+        for i in range(len(pos_list)):
+            pos = pos_list[i]
+            for j in len(pos):
+                if pos[j].isnumeric():
+                    continue
+                else:
+                    cls.bitboards[pos[j]] |= (1 << (i*8+j))
+        cls.side_to_move = fen_list[1]
+        cls.castling_rights = fen_list[2]
+        cls.enpassent = fen_list[3]
+        cls.half_move = fen_list[4]
+        cls.full_move = fen_list[5]
     
     def position_hash(self) -> int:
         """Generates a unique hash for the current board state."""
