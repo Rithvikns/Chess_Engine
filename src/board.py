@@ -1,7 +1,7 @@
 from dataclasses import dataclass , field
 
 @dataclass
-class board:
+class Board:
     bitboards : dict = field(default_factory=lambda: {
     'P' : 0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_00000000,
     'N' : 0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_01000010,
