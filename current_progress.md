@@ -1,5 +1,3 @@
-# When appending piece characters in to_fens, ensure they are correctly converted to FEN notation (though your current implementation looks mostly correct).
-
 # General Improvements:
 - Consider using Enum for piece names to improve readability.
 
