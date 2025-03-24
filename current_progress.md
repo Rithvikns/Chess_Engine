@@ -1,14 +1,6 @@
 
 # Method Formatting
 
-- Incorrect Bitboard Clearing in move_piece
-
-- The line self.bitboards[piece] = self.bitboards[piece] & (0 << start) is incorrect.
-
-- 0 << start always results in 0, meaning you are not actually clearing the bit.
-
-- Instead, use self.bitboards[piece] &= ~(1 << start).
-
 - Incorrect Logic in is_square_occupied
 
 - The method currently returns False when a piece is present, which is the opposite of what it should do.
