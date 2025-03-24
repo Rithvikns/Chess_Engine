@@ -1,7 +1,3 @@
-# Issues & Fixes:
-Class Name Formatting
-
-Class names should follow PascalCase, so rename board to Board.
 
 # Method Formatting
 
