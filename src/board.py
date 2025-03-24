@@ -58,13 +58,13 @@ class Board:
             return(self.bitboards['p'] | self.bitboards['n'] | self.bitboards['r'] | self.bitboards['b'] | self.bitboards['q'] | self.bitboards['k']) 
             pass
     
-    def to_fens(bitboards, side_to_move, castling, enpassant, half_move, full_move) -> str:
+    def to_fens(self, side_to_move, castling, enpassant, half_move, full_move) -> str:
         """Converts the bitboard position into FEN notation."""
         output = ""
         chess_board = [[0] * 8 for _ in range(8)]
 
         # Place pieces on board
-        for board_name, bitboard in bitboards.items():
+        for board_name, bitboard in self.bitboards.items():
             for i in range(64):
                 if (bitboard >> i) & 1:
                     row = 7 - (i // 8)
