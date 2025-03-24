@@ -44,7 +44,7 @@ class Board:
     
     def is_square_occupied(self, square: int) -> bool:
         """Checks if a square has any piece."""
-        for bitnoard_name , bitboard in self.bitboards.items():
+        for bitboard in self.bitboards.values():
             if (bitboard >> square ) & 1:
                 return True
         
