@@ -46,9 +46,9 @@ class Board:
         """Checks if a square has any piece."""
         for bitnoard_name , bitboard in self.bitboards.items():
             if (bitboard >> square ) & 1:
-                return False
+                return True
         
-        return True
+        return False
     
     def get_occupancy(self, color: str):
         """Returns a combined bitboard of all pieces for a given color."""
