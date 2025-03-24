@@ -1,9 +1,4 @@
 ## Extra pass Statements
-
-- pass is unnecessary in methods that already contain executable code.
-
-- Remove pass from display, set_piece, move_piece, and get_occupancy.
-
 - Fix Variable Name bitnoard_name
 
 - In is_square_occupied, for bitnoard_name, bitboard in self.bitboards.items(): contains a typo.
