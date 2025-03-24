@@ -38,7 +38,7 @@ class Board:
     
     def move_piece(self,piece, start: int, end: int):
         """Moves a piece from one square to another using bit manipulation."""
-        self.bitboards[piece] = self.bitboards[piece] & (0 << start)
+        self.bitboards[piece] = self.bitboards[piece] & (~(1 << start))
         self.bitboards[piece] = self.bitboards[piece] | (1 << end)
         pass
     
