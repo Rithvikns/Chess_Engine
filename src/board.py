@@ -29,18 +29,18 @@ class Board:
                     chess_board[row][col] = board_name
         for row in chess_board:
             print(row)
-        pass
+        
     
     def set_piece(self, square: int, piece: str):
         """Updates the bitboard to add/remove a piece at a given square."""
         self.bitboards[piece] = self.bitboards[piece] | (1 << square)
-        pass
+        
     
     def move_piece(self,piece, start: int, end: int):
         """Moves a piece from one square to another using bit manipulation."""
         self.bitboards[piece] = self.bitboards[piece] & (~(1 << start))
         self.bitboards[piece] = self.bitboards[piece] | (1 << end)
-        pass
+        
     
     def is_square_occupied(self, square: int) -> bool:
         """Checks if a square has any piece."""
@@ -56,7 +56,7 @@ class Board:
             return(self.bitboards['P'] | self.bitboards['N'] | self.bitboards['R'] | self.bitboards['B'] | self.bitboards['Q'] | self.bitboards['K']) 
         else:
             return(self.bitboards['p'] | self.bitboards['n'] | self.bitboards['r'] | self.bitboards['b'] | self.bitboards['q'] | self.bitboards['k']) 
-            pass
+            
     
     def to_fens(self, side_to_move, castling, enpassant, half_move, full_move) -> str:
         """Converts the bitboard position into FEN notation."""
