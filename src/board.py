@@ -133,7 +133,6 @@ class Board:
     def position_hash(self) -> int:
         """Generates a unique hash for the current board state."""
         hash_value = 0
-        random.getrandbits(64)
         for piece,bitboard in self.bitboards.items():
             for i in range(64):
                 if (bitboard >> i) & 1 :
