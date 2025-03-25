@@ -30,4 +30,3 @@ Zobrist hashing assigns a random 64-bit integer to each piece-square combination
 
 ## Conclusion
 Zobrist hashing is a fundamental optimization in modern chess engines, allowing for efficient position tracking and decision-making. By leveraging XOR operations and precomputed random values, engines can evaluate millions of positions quickly and accurately.
-
