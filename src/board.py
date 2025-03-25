@@ -136,6 +136,5 @@ class Board:
         random.getrandbits(64)
         for bitboard in self.bitboards.value():
             for i in range(64):
-                if (bitboard >> i) & 1:
-                    (hash_value << i) ^ 1
+                pass
         
