@@ -134,7 +134,8 @@ class Board:
         """Generates a unique hash for the current board state."""
         hash_value = 0
         random.getrandbits(64)
-        for bitboard in self.bitboards.value():
+        for piece,bitboard in self.bitboards.items():
             for i in range(64):
-                pass
+                if (bitboard >> i) & 1 :
+                    hash_value ^= self.zobrist_table[piece][i]
         
