@@ -1,4 +1,5 @@
 from dataclasses import dataclass , field
+import random
 
 @dataclass
 class Board:
@@ -120,4 +121,10 @@ class Board:
     
     def position_hash(self) -> int:
         """Generates a unique hash for the current board state."""
-        pass
+        hash_value = 0
+        random.getrandbits(64)
+        for bitboard in self.bitboards.value():
+            for i in range(64):
+                if (bitboard >> i) & 1:
+                    (hash_value << i) ^ 1
+        
