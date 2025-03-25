@@ -130,11 +130,14 @@ class Board:
         cls.half_move = fen_list[4]
         cls.full_move = fen_list[5]
     
-    def position_hash(self) -> int:
-        """Generates a unique hash for the current board state."""
-        hash_value = 0
-        for piece,bitboard in self.bitboards.items():
-            for i in range(64):
-                if (bitboard >> i) & 1 :
-                    hash_value ^= self.zobrist_table[piece][i]
-        
+def position_hash(self) -> int:
+    """Generates a unique hash for the current board state."""
+    hash_value = 0
+
+    for piece, bitboard in self.bitboards.items():
+        while bitboard:  # Iterate only over occupied squares
+            square = (bitboard & -bitboard).bit_length() - 1  # Get the index of LSB (occupied square)
+            hash_value ^= self.zobrist_table[piece][square]
+            bitboard &= bitboard - 1  # Remove the LSB from the bitboard
+
+    return hash_value
