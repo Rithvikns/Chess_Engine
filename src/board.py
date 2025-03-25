@@ -18,6 +18,17 @@ class Board:
     'k' : 0b00001000_00000000_00000000_00000000_00000000_00000000_00000000_00000000
   
     })
+
+    zobrist_table : dict = field(init=False)
+    def __post_init__(self):
+        self.zobrist_table = {
+            "piece": {square: random.getrandbits(64) for square in range(64) for piece in self.bitboards.keys()},
+            "castling": [random.getrandbits(64) for _ in range(4)],  # 4 castling rights
+            "en_passant": {file: random.getrandbits(64) for file in range(8)},  # 8 possible en passant files
+            "side_to_move": random.getrandbits(64)  # Single value for White/Black
+            }
+    
+
     side_to_move = 'w'
     castling_rights = "KQkq"
     enpassent = '-'
