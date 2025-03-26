@@ -5,8 +5,6 @@ The line cls.bitboards = dict.fromkeys(cls.bitboards.keys(),0) incorrectly tries
 
 The bit shifting (1 << (i*8+j)) is incorrect. It should correctly account for rank and file.
 
-position_hash Should Be Inside the Class
-
 The method position_hash(self) is currently defined outside the class. It should be included inside Board with self referring to the instance.
 
 # Improvements
