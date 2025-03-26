@@ -111,10 +111,9 @@ class Board:
         
         return output
     
-    @classmethod
-    def from_fen(cls, fen: str):
+    def from_fen(self, fen: str):
         """Loads a position from a FEN string into bitboards."""
-        cls.bitboards = dict.fromkeys(cls.bitboards.keys(),0)
+        self.bitboards = dict.fromkeys(self.bitboards.keys(),0)
         fen_list = fen.split(" ")
         pos_list = fen_list[0].split("/")
         for i in range(len(pos_list)):
@@ -123,12 +122,12 @@ class Board:
                 if pos[j].isnumeric():
                     continue
                 else:
-                    cls.bitboards[pos[j]] |= (1 << (i*8+j))
-        cls.side_to_move = fen_list[1]
-        cls.castling_rights = fen_list[2]
-        cls.enpassent = fen_list[3]
-        cls.half_move = fen_list[4]
-        cls.full_move = fen_list[5]
+                    self.bitboards[pos[j]] |= (1 << (i*8+j))
+        self.side_to_move = fen_list[1]
+        self.castling_rights = fen_list[2]
+        self.enpassent = fen_list[3]
+        self.half_move = fen_list[4]
+        self.full_move = fen_list[5]
     
     def position_hash(self) -> int:
         """Generates a unique hash for the current board state."""
