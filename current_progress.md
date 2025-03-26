@@ -3,8 +3,6 @@ Fix from_fen Method Implementation
 
 The line cls.bitboards = dict.fromkeys(cls.bitboards.keys(),0) incorrectly tries to modify a class variable rather than an instance variable. Instead, create a new bitboards dictionary inside the method.
 
-The loop for j in len(pos): should be for j in range(len(pos)): since len(pos) returns an integer.
-
 The bit shifting (1 << (i*8+j)) is incorrect. It should correctly account for rank and file.
 
 position_hash Should Be Inside the Class
