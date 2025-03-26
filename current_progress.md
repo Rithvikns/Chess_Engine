@@ -1,7 +1,4 @@
-# Corrections & Fixes
-Fix from_fen Method Implementation
 
-The bit shifting (1 << (i*8+j)) is incorrect. It should correctly account for rank and file.
 # Improvements
 Enforce Type Annotations Consistently
 
