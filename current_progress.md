@@ -1,8 +1,6 @@
 # Corrections & Fixes
 Fix from_fen Method Implementation
 
-The line cls.bitboards = dict.fromkeys(cls.bitboards.keys(),0) incorrectly tries to modify a class variable rather than an instance variable. Instead, create a new bitboards dictionary inside the method.
-
 The bit shifting (1 << (i*8+j)) is incorrect. It should correctly account for rank and file.
 # Improvements
 Enforce Type Annotations Consistently
