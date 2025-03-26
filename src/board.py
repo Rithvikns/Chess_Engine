@@ -119,7 +119,7 @@ class Board:
         pos_list = fen_list[0].split("/")
         for i in range(len(pos_list)):
             pos = pos_list[i]
-            for j in len(pos):
+            for j in range(len(pos)):
                 if pos[j].isnumeric():
                     continue
                 else:
