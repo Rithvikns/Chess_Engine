@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 import board
 
-print(board.Board.bitboards)
 @dataclass
 class Engine:
     depth : int = 3
