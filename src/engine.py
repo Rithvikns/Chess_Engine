@@ -1,12 +1,14 @@
 from dataclasses import dataclass
 import board
 
+print(board.Board.bitboards)
 @dataclass
 class Engine:
     depth : int = 3
 
-    def generate_legal_moves(self, board):
+    def generate_legal_moves(self):
         """Generates all legal moves for the current position."""
+        board.Board.bitboards
         pass
 
     def is_move_legal(self, board, move: tuple) -> bool:
