@@ -9,6 +9,7 @@ class Engine:
     def generate_legal_moves(self):
         """Generates all legal moves for the current position."""
         board.Board.bitboards
+        board.Board.get_occupancy()
         pass
 
     def is_move_legal(self, board, move: tuple) -> bool:
