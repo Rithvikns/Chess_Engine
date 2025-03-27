@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 class Engine:
     def __init__(self, depth: int = 3):
         """Initializes the engine with a default search depth and settings."""
