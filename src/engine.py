@@ -5,12 +5,16 @@ print(board.Board.bitboards)
 @dataclass
 class Engine:
     depth : int = 3
+    color : str = 'white'
 
     def generate_legal_moves(self):
         """Generates all legal moves for the current position."""
         board.Board.bitboards
-        board.Board.get_occupancy()
-        pass
+        if board.Board.side_to_move == 'w':
+            self.color = 'white'
+        else:
+            self.color = 'black'
+        board.Board.get_occupancy(self.color)
 
     def is_move_legal(self, board, move: tuple) -> bool:
         """Checks if a move is legal."""
