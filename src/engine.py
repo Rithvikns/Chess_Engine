@@ -14,7 +14,8 @@ class Engine:
             self.color = 'white'
         else:
             self.color = 'black'
-        board.Board.get_occupancy(self.color)
+        own_pieces = board.Board.get_occupancy(self.color)
+        enemy_pieces = board.Board.get_occupancy('black' if self.color == 'white' else 'white')
 
     def is_move_legal(self, board, move: tuple) -> bool:
         """Checks if a move is legal."""
