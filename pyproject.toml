@@ -5,6 +5,7 @@ description = "Chess Engine using python"
 authors = [
     {name = "Rithvikns",email = "rithviknswamy@gmail.com"}
 ]
+packages = [{ include = "chess_engine" }] 
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
