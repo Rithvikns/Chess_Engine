@@ -9,7 +9,6 @@ class Engine:
 
     def generate_legal_moves(self):
         """Generates all legal moves for the current position."""
-        board.Board.bitboards
         if board.Board.side_to_move == 'w':
             self.color = 'white'
         else:
@@ -20,6 +19,11 @@ class Engine:
         if board.Board.enpassant != '-':
             ep_square = board.Board.get_enpassant_square()
         
+        # pawn moves
+
+        pawns = board.Board.bitboards('P') if self.color == 'white' else 'black'
+        push_dir = 8 if self.color == 'white' else -8
+        promotion_rank = (pawns & 0xFF00000000000000) if self.color == 'white' else (pawns & 0x00000000000000FF)
 
 
     def is_move_legal(self, board, move: tuple) -> bool:
