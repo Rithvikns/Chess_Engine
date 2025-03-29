@@ -31,7 +31,7 @@ class Board:
 
     side_to_move = 'w'
     castling_rights = "KQkq"
-    enpassent = '-'
+    enpassant = '-'
     half_move = 0
     full_move = 1
 
@@ -125,7 +125,7 @@ class Board:
                     self.bitboards[pos[j]] |= (1 << (i*8+j))
         self.side_to_move = fen_list[1]
         self.castling_rights = fen_list[2]
-        self.enpassent = fen_list[3]
+        self.enpassant = fen_list[3]
         self.half_move = fen_list[4]
         self.full_move = fen_list[5]
     
@@ -140,3 +140,11 @@ class Board:
                 bitboard &= bitboard - 1  # Remove the LSB from the bitboard
 
         return hash_value
+    
+    def get_enpassant_square(self):
+        if self.enpassant == '-':
+            return None
+        else:
+            file =  ord(self.enpassant[0]) - ord('a')
+            rank = int(self.enpassant[1]) - 1
+        return file * 8 + rank
