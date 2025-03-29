@@ -1,15 +1,11 @@
 name: Chess Engine CI
 
-on: 
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -19,10 +15,17 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install dependencies
+      - name: Install Poetry
         run: |
-          pip install -r requirements.txt
+          curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: Run tests
+      - name: Configure Poetry (optional, if needed)
         run: |
-          pytest tests/
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          poetry config virtualenvs.in-project true
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Run pytest tests
+        run: poetry run pytest tests/ --exitfirst --verbose
