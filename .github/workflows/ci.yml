@@ -19,8 +19,11 @@ jobs:
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: Install dependencies
-        run: poetry install
+      - name: Configure Poetry
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies (without package installation)
+        run: poetry install --no-root
 
       - name: Run pytest tests
         run: poetry run pytest tests/ --exitfirst --verbose
