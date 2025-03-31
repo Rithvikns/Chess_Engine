@@ -26,7 +26,10 @@ class Engine:
         promotion_rank = (pawns & 0xFF00000000000000) if self.color == 'white' else (pawns & 0x00000000000000FF)
 
         for pawn in pawns:
-            pass
+            target = pawn + push_dir
+            if target not in all_pieces:
+                if target & promotion_rank:
+                    pass
 
     def is_move_legal(self, board, move: tuple) -> bool:
         """Checks if a move is legal."""
